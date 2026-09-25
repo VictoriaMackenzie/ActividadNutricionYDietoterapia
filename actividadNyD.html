@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nutrición y Dietoterapia · Ejercicios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="encabezado">
+  <div class="encabezado__contenido">
+    <p class="encabezado__eyebrow">Enfermería</p>
+    <h1 class="encabezado__titulo">Nutrición y Dietoterapia</h1>
+    <p class="encabezado__subtitulo">Ejercicios de práctica para reforzar los contenidos de la materia</p>
+  </div>
+</header>
+
+<main class="contenedor">
+
+  <!-- ================= ASISTENCIA ================= -->
+  <section id="asistencia" class="tarjeta tarjeta--asistencia">
+    <div class="tarjeta__clip"></div>
+    <h2 class="tarjeta__titulo">Registro de asistencia</h2>
+    <p class="tarjeta__texto">Completá tus datos para dejar constancia de tu actividad. Una vez que presiones ¨Registrar asistencia y comenzar¨ demora unos segundos, esperá un poco y reaccionará. Es un tema de seguridad.</p>
+    <form id="form-asistencia" class="formulario">
+      <div class="campo">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required autocomplete="given-name">
+      </div>
+      <div class="campo">
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" name="apellido" required autocomplete="family-name">
+      </div>
+      <div class="campo">
+        <label for="comision">Comisión</label>
+        <input type="text" id="comision" name="comision" required placeholder="Ej: 2° B">
+      </div>
+      <div class="campo">
+        <label for="institucion">Institución</label>
+        <input type="text" id="institucion" name="institucion" required>
+      </div>
+      <button type="submit" class="boton boton--primario">Registrar asistencia y comenzar</button>
+    </form>
+  </section>
+
+  <!-- ================= PANEL DE TEMAS ================= -->
+  <section id="panel" class="tarjeta" hidden>
+    <h2 class="tarjeta__titulo" id="saludo">Elegí un tema para practicar</h2>
+    <div id="grid-temas" class="grid-temas"></div>
+  </section>
+
+  <!-- ================= QUIZ ================= -->
+  <section id="quiz" class="tarjeta" hidden>
+    <div class="quiz__cabecera">
+      <span id="tema-badge" class="badge"></span>
+      <span id="progreso" class="progreso"></span>
+    </div>
+    <h2 id="pregunta" class="quiz__pregunta"></h2>
+    <div id="opciones" class="opciones"></div>
+    <div class="quiz__acciones">
+      <button id="btn-confirmar" class="boton boton--primario" disabled>Confirmar respuesta</button>
+    </div>
+  </section>
+
+  <!-- ================= RESULTADOS ================= -->
+  <section id="resultados" class="tarjeta" hidden>
+    <h2 class="tarjeta__titulo">Resultados</h2>
+    <p id="puntaje" class="puntaje"></p>
+    <ul id="revision" class="revision"></ul>
+    <div class="quiz__acciones">
+      <button id="btn-reintentar" class="boton boton--primario">Repetir este tema</button>
+      <button id="btn-otro-tema" class="boton boton--secundario">Elegir otro tema</button>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= MODAL DE RETROALIMENTACIÓN ================= -->
+<div id="modal-overlay" class="modal-overlay" hidden>
+  <div class="modal" role="alertdialog" aria-modal="true" aria-labelledby="modal-titulo" aria-describedby="modal-texto">
+    <span id="modal-icono" class="modal__icono" aria-hidden="true"></span>
+    <h3 id="modal-titulo" class="modal__titulo"></h3>
+    <p id="modal-texto" class="modal__texto"></p>
+    <button id="modal-btn-siguiente" class="boton boton--primario">Siguiente pregunta</button>
+  </div>
+</div>
+
+<footer class="pie">
+  <p>Material de estudio elaborado por la cátedra de Nutrición y dietoterapia· Uso interno para la práctica de contenidos</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
